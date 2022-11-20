@@ -41,7 +41,7 @@
           return simpleDateFormat.format(date);
       }
   ```
-  #### 实验截图：
+*  #### 实验截图：
     新增笔记(P5):  
     ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/5.png?raw=true)  
     更改笔记内容后(P6):  
@@ -105,7 +105,7 @@
       }
   ```
 
-  #### 实验截图：
+*  #### 实验截图：
     原始数据(P7):  
     ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/7.png?raw=true)  
     点击右上角搜索图标(P8):  
@@ -172,7 +172,7 @@
     }
     ```
   
-  #### 实验截图：
+*  #### 实验截图：
   
     深夜模式(P10 P11):  
     ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/10.png?raw=true)![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/11.png?raw=true)  
@@ -220,7 +220,7 @@
   ```
 
 
-  #### 实验截图：
+*  #### 实验截图：
   
 开启按时间倒序排列(P16):                  
  ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/16.png?raw=true)  
@@ -243,29 +243,38 @@
   MainAcitivty.java
 
   ```java
-  //新增自定义标签
-  add_tag.setOnClickListener(new OnClickListener() {
-                      @Override
-                      public void onClick(View v) {
-                          if (sharedPreferences.getString("tagListString","").split("_").length < 8) {
-                              final EditText et = new EditText(context);
-                              new AlertDialog.Builder(MainActivity.this)
-                                      .setMessage("Enter the name of tag")
-                                      .setView(et)
+    //统计不同标签的笔记数
+      public List<Integer> numOfTagNotes(List<String> noteStringList){
+          Integer[] numbers = new Integer[noteStringList.size()];
+          for(int i = 0; i < numbers.length; i++) numbers[i] = 0;
+          for(int i = 0; i < noteList.size(); i++){
+              numbers[noteList.get(i).getTag() - 1] ++;
+          }
+          return Arrays.asList(numbers);
+      }
+    //新增自定义标签
+    add_tag.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (sharedPreferences.getString("tagListString","").split("_").length < 8) {
+                                final EditText et = new EditText(context);
+                                new AlertDialog.Builder(MainActivity.this)
+                                        .setMessage("Enter the name of tag")
+                                        .setView(et)
+                                    ......
+      }
+            else Toast.makeText(context, "Repeated tag!", Toast.LENGTH_SHORT).show();
+      }                           ......
+    //按选中的标签进行展示
+    List<String> tagList = Arrays.asList(sharedPreferences.getString("tagListString", null).split("_")); //获取tags
+                    tagAdapter = new TagAdapter(context, tagList, numOfTagNotes(tagList));
+                    lv_tag.setAdapter(tagAdapter);
+
+                    lv_tag.setOnItemClickListener(new OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            List<String> tagList = Arrays.asList
                                   ......
-  }
-          else Toast.makeText(context, "Repeated tag!", Toast.LENGTH_SHORT).show();
-  	}                           ......
-  //按选中的标签进行展示
-  List<String> tagList = Arrays.asList(sharedPreferences.getString("tagListString", null).split("_")); //获取tags
-                  tagAdapter = new TagAdapter(context, tagList, numOfTagNotes(tagList));
-                  lv_tag.setAdapter(tagAdapter);
-  
-                  lv_tag.setOnItemClickListener(new OnItemClickListener() {
-                      @Override
-                      public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                          List<String> tagList = Arrays.asList
-                              	......
   ```
 
   #### 实验截图：
@@ -277,7 +286,28 @@
 点击相应标签项只显示该标签下的Note(P20)：  
 ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/20.png?raw=true)
   
-
+### 4.修改Note标题样式
+* #### 思路
+将Note的Contest通过\n字符分成2部分，当在setting中触发条件后，将第一行内容作为标题。
+* #### 部分实验代码：
+```java
+        //对contest进行分割
+        String allText = noteList.get(position).getContent();
+        if (sharedPreferences.getBoolean("noteTitle" ,true))
+            tv_content.setText(allText.split("\n")[0]);
+        else tv_content.setText(allText);
+        tv_time.setText(noteList.get(position).getTime());
+        //判定switch
+                if(!sharedPreferences.contains("noteTitle")){
+            editor.putBoolean("noteTitle", true);
+            editor.commit();
+        }
+```
+  #### 实验截图：
+  添加内容为123\n123\n123的Note(P21):  
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/21.png?raw=true)  
+  修改Note标题样式(P22):  
+  ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/22.png?raw=true)
 
 
 
