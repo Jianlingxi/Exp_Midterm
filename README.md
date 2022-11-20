@@ -107,11 +107,11 @@
 
   #### 实验截图：
     原始数据(P7):  
-    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/7.png?raw=true)
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/7.png?raw=true)  
     点击右上角搜索图标(P8):  
-    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/8.png?raw=true)
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/8.png?raw=true)  
     根据搜索框内容进行筛选(P9):  
-    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/9.png?raw=true)
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/9.png?raw=true)  
 
 ## ②附加功能：
 
