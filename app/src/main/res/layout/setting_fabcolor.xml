@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:title="添加颜色按钮"
+        app:titleTextColor="?attr/titleColor"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/TVsetting"
+                        android:text="当前:" />
+
+                    <ImageView
+                        android:id="@+id/curFab"
+                        style="@style/IVsetting"
+                        android:background="@color/q" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TVsetting"
+                        android:text="默认:" />
+
+                    <ImageView
+                        android:id="@+id/defFab"
+                        style="@style/IVsetting"
+                        android:background="@color/fabColor1" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/TVsetting"
+                android:text="其他选择:" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/q"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/q" />
+
+                <ImageView
+                    android:id="@+id/w"
+                    style="@style/IVsetting"
+                    android:background="@color/w" />
+
+                <ImageView
+                    android:id="@+id/e"
+                    style="@style/IVsetting"
+                    android:background="@color/e" />
+
+                <ImageView
+                    android:id="@+id/r"
+                    style="@style/IVsetting"
+                    android:background="@color/r" />
+
+                <ImageView
+                    android:id="@+id/t"
+                    style="@style/IVsetting"
+                    android:background="@color/t" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/y"
+                    style="@style/IVsetting"
+                    android:background="@color/y" />
+
+                <ImageView
+                    android:id="@+id/u"
+                    style="@style/IVsetting"
+                    android:background="@color/u" />
+
+                <ImageView
+                    android:id="@+id/i"
+                    style="@style/IVsetting"
+                    android:background="@color/i" />
+
+                <ImageView
+                    android:id="@+id/o"
+                    style="@style/IVsetting"
+                    android:background="@color/o" />
+
+                <ImageView
+                    android:id="@+id/p"
+                    style="@style/IVsetting"
+                    android:background="@color/p" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Exp_Midterm</string>
+    <string name="pref_night_summary">Turn on / off 黑夜模式</string>
+    <string name="pref_reversesort_summary">倒置当前项目的时间顺序</string>
+    <string name="pref_reversesort">时间倒置</string>
+    <string name="pref_fabcolor_summary">选择颜色进行修改</string>
+    <string name="pref_fabcolor">偏好颜色设置</string>
+    <string name="pref_notetitle">Note标题样式</string>
+    <string name="pref_notetitle_summary">将第一行设置为其标题</string>
+</resources>
