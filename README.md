@@ -1,10 +1,13 @@
 # Android NotePad笔记本应用
 ## 页面展示：
 #### 1.主页（P1）:
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/1.png?raw=true)
 #### 2.添加Note(P2):
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/2.png?raw=true)
 #### 3.侧边菜单栏(P3):
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/3.png?raw=true)
 #### 4.设置(P4):
-
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/4.png?raw=true)
 ## ①基础功能：
 
 ### 1. NoteList中显示条目增加时间戳显示
@@ -40,8 +43,9 @@
   ```
   #### 实验截图：
     新增笔记(P5):
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/5.png?raw=true)
     更改笔记内容后(P6):
-  
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/6.png?raw=true)
 ### 2.添加笔记查询功能（根据标题查询）
 
 - #### 思路：
@@ -103,11 +107,11 @@
 
   #### 实验截图：
     原始数据(P7):
-  
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/7.png?raw=true)
     点击右上角搜索图标(P8):
-  
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/8.png?raw=true)
     根据搜索框内容进行筛选(P9):
-  
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/9.png?raw=true)
 
 ## ②附加功能：
 
@@ -171,18 +175,18 @@
   #### 实验截图：
   
     深夜模式(P10 P11):
-
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/10.png?raw=true)![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/11.png?raw=true)
   
     白天模式(P12 P13):
-  
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/12.png?raw=true)![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/13.png?raw=true)
  
   
     ##### 修改添加钮和工具栏的颜色样式: 
     
     修改前(P14):
-
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/14.png?raw=true)
     修改后的效果(P15):
-  
+    ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/15.png?raw=true)
 
 
 ### 2.  按时间正序或倒序排列笔记
@@ -219,9 +223,9 @@
   #### 实验截图：
   
 开启按时间倒序排列(P16):                
-  
+ ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/16.png?raw=true)
 倒序排列后的效果(P17):
-  
+  ![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/17.png?raw=true)
 
   
 
@@ -239,15 +243,6 @@
   MainAcitivty.java
 
   ```java
-  //统计不同标签的笔记数
-      public List<Integer> numOfTagNotes(List<String> noteStringList){
-          Integer[] numbers = new Integer[noteStringList.size()];
-          for(int i = 0; i < numbers.length; i++) numbers[i] = 0;
-          for(int i = 0; i < noteList.size(); i++){
-              numbers[noteList.get(i).getTag() - 1] ++;
-          }
-          return Arrays.asList(numbers);
-      }
   //新增自定义标签
   add_tag.setOnClickListener(new OnClickListener() {
                       @Override
@@ -276,10 +271,11 @@
   #### 实验截图：
   
 添加前(P18):
-
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/18.png?raw=true)
 点击add new tag 输入自定义tag名称(P19)：
-                    
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/19.png?raw=true)
 点击相应标签项只显示该标签下的Note(P20)：
+![image](https://github.com/Jianlingxi/Exp_Midterm/blob/master/DRAW/20.png?raw=true)
   
 
 
